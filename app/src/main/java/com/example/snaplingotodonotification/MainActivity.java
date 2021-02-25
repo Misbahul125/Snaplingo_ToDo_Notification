@@ -132,8 +132,12 @@ public class MainActivity extends AppCompatActivity {
                 Date date1 = formatter.parse(dateandtime);
                 am.set(AlarmManager.RTC_WAKEUP, date1.getTime(), pendingIntent);
 
+                Toast.makeText(this, "Reminder set successfully", Toast.LENGTH_LONG).show();
+
             } catch (ParseException e) {
                 e.printStackTrace();
+
+                Toast.makeText(this, "Unable to set reminder!", Toast.LENGTH_LONG).show();
             }
         }
     }
